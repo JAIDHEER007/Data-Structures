@@ -104,7 +104,7 @@ int main(){
 	list1.erase(itr);
 	print_dll(list1);
 	
-	//mathed!
+	//matched!
 	
 	return 0;
 }
