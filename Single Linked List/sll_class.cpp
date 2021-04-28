@@ -1,4 +1,4 @@
-//Linked List using classes
+//Linked List using class
 
 #include<iostream>
 #include<vector>
