@@ -12,7 +12,7 @@ int main(){
 	
 //	cout<<s1.top()<<endl;
 //	Don't do it 
-//	Leads to segmentatin fault
+//	Leads to segmentation fault
 	
 	s1.push(553);
 	s1.push(554);
