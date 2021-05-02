@@ -93,6 +93,16 @@ bool stack::isEmpty(){
 	return (top==NULL);
 }
 
+void stack::size(){
+        int len = 0;
+	node *temp = top;
+	while(temp!=NULL){
+		len++;
+		temp = temp -> next;
+	}
+	return len;
+}
+
 void stack::print(){
 	if(top == NULL){
 		cout<<"Stack is empty. Nothing to print!!"<<endl;
