@@ -1,4 +1,4 @@
-//My own implementattion for checking if brackets are balanced or not
+//My own implementation for checking if brackets are balanced or not
 //if the function returns -1, then the input string is balanced
 //if not, it will return the index where mismatch has ocurred. 
 
