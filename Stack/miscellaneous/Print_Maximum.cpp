@@ -37,7 +37,7 @@ int main(){
 	int opt, val;
 	
 	while(true){
-		cout<<"Enter you option: ";
+		cout<<"Enter your option: ";
 		cin>>opt;
 		
 		switch(opt){
