@@ -49,7 +49,7 @@ int main(){
 				if(maxStack.empty()){ maxStack.push(val); }
 				else
 					if(maxStack.top() <= val){ maxStack.push(val); }
-				cout<<"pushed "<<val<<" into stack"<<endl;
+					cout<<"pushed "<<val<<" into stack"<<endl;
 				
 				break;
 			}
