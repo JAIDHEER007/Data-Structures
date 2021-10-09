@@ -1,6 +1,7 @@
 //Prefix Tree implementation (Trie)
 
 #include<iostream>
+#include<vector>
 #include<queue>
 #include<sstream>
 #define A_SIZE 26
@@ -34,6 +35,16 @@ class node{
 class prefixTree : protected node{
     private:
         node *root;
+
+        void getAllWordsDFS(vector<string> &result, string temp, node* curr){
+            if(curr->isEnd)
+                result.push_back(temp);
+
+            for(int i = 0; i < A_SIZE; ++i){
+                if(curr->children[i] != NULL) 
+                    getAllWordsDFS(result, (temp + char('a' + i)), curr->children[i]); 
+            }
+        }
     public:
         prefixTree(){
             root = new node();
@@ -69,6 +80,14 @@ class prefixTree : protected node{
             }
             return true; 
         }
+
+        vector<string> allWords(){
+            vector<string> result; 
+            string temp = "";
+            getAllWordsDFS(result, temp, root);
+            return result; 
+        }
+
 
         // Debugging function 
         // Prints contents of every node in Level Order
@@ -118,6 +137,25 @@ int main(){
     pt1.insert("educator");
 
     cout<<boolalpha<<pt1.startsWith("edu")<<endl; 
+
+    vector<string> allWords = pt1.allWords(); 
+
+    for(string word:allWords)
+        cout<<word<<endl;
+
+    prefixTree pt2; 
+
+    pt2.insert("at");
+    pt2.insert("ate");
+    pt2.insert("bad");
+    pt2.insert("bed");
+    pt2.insert("beat");
+    pt2.insert("beard");
+
+    allWords = pt2.allWords(); 
+
+    for(string word:allWords)
+        cout<<word<<endl;
 
     return 0; 
 }
