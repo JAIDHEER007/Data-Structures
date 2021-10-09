@@ -113,9 +113,9 @@ int main(){
 
     pt1.insert("edu");
 
-    // pt1.insert("education");
-    // pt1.insert("educative");
-    // pt1.insert("educator");
+    pt1.insert("education");
+    pt1.insert("educative");
+    pt1.insert("educator");
 
     cout<<boolalpha<<pt1.startsWith("edu")<<endl; 
 
