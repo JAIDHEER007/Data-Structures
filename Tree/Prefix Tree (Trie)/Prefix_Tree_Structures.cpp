@@ -1,6 +1,7 @@
 // Implementing prefix tree (trie) using structures
 
 #include<iostream>
+#include<vector>
 #define A_SIZE 26
 using namespace std; 
 
@@ -48,6 +49,16 @@ bool startsWith(node* root, string key){
     return true; 
 }
 
+void getAllWords(node* curr, vector<string> &result, string temp = ""){
+    if(curr->isEnd)
+        result.push_back(temp);
+    
+    for(int i = 0; i < A_SIZE; ++i){
+        if(curr->children[i] != NULL)
+            getAllWords((curr->children[i]), result, (temp + char('a' + i)));
+    }
+}
+
 int main(){
 
     node* root = getNode(); 
@@ -61,6 +72,13 @@ int main(){
     cout<<boolalpha<<search(root, "jai")<<endl;
     cout<<boolalpha<<startsWith(root, "jai")<<endl;
     
+    vector<string> allWords; 
+    getAllWords(root, allWords);
+
+    for(string word:allWords)
+        cout<<word<<endl; 
+     
+
     return 0; 
 }
 
