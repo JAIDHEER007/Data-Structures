@@ -25,7 +25,6 @@ def makeSLL_string(data: str, func: type = str) -> node:
     
     """
     dummyHead = curr = node()   # Dummy Head
-    print(type(func))
 
     for token in map(func, data.strip().split()):
         curr.next = node(token)
